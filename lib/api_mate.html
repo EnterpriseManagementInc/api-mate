@@ -1,24 +1,18 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>API Mate</title>
-    <link href="vendor/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
-    <link href="vendor/bootstrap-responsive.min.css" media="all" rel="stylesheet" type="text/css">
-    <link href="api_mate.css" media="all" rel="stylesheet" type="text/css">
-</head>
-<body>
-<div id="content-wrapper"><a href="https://github.com/mconf/api-mate"><img
-        style="position: absolute; top: 0; right: 0; border: 0;"
-        src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+    <link href="css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
 
+    <link href="api_mate.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="content-wrapper">
     <div id="page-header-wrapper" class="clearfix">
         <div id="page-header" class="clearfix">
             <div class="logo clearfix">
                 <h1>API Mate</h1>
-
-                <div class="description">A tool to access the API of BigBlueButton and Mconf</div>
-                <div class="docs"><span>API docs:</span><a href="http://code.google.com/p/bigbluebutton/wiki/API">BigBlueButton</a><a
-                        href="https://github.com/mconf/wiki/wiki/Mconf-Live-API-Changes">Mconf-Live</a></div>
             </div>
             <div class="notes">
                 <div class="about">Developed using <a href="https://github.com/mconf/bigbluebutton-api-js">bigbluebutton-api-js</a>
@@ -29,151 +23,194 @@
             </div>
         </div>
     </div>
-    <div id="content" class="row-fluid">
-        <div id="api-mate-config" class="span4">
+    <div id="content" class="row">
+        <div id="api-mate-config" class="col-md-4">
             <div id="config-options" class="clearfix">
                 <h4>Options</h4>
 
                 <div id="config-options-view-type">
                     <div data-toggle="buttons-checkbox" class="btn-group">
-                        <button id="view-type-input" type="button" class="btn btn-small"><i class="icon-check"></i>Full
-                            links
+                        <button id="view-type-input" type="button" class="btn btn-sm"><i
+                                class="glyphicon glyphicon-check"></i>Full links
                         </button>
                     </div>
                 </div>
                 <div id="config-options-buttons">
-                    <button type="submit" class="api-mate-clearall btn btn-small btn-danger">Clear fields</button>
+                    <button type="submit" class="api-mate-clearall btn btn-sm btn-danger">Clear fields</button>
                 </div>
             </div>
             <div id="config-server">
                 <h4>Server</h4>
 
                 <div class="field">
-                    <label for="input-id"><code>Server</code>
+                    <label label-default="label-default" for="input-id"><code>Server</code>
                     </label>
-                    <input id="input-custom-server-url" type="text"
-                           value="http://192.168.157.183/bigbluebutton/api"
-                           placeholder="Url (e.g http://192.168.0.100:8080/bigbluebutton/api)">
-
+                    <input id="input-custom-server-url" type="text" class="form-control"
+                           value="https://test-dcs-conference-01.ices-us.net/bigbluebutton/api"
+                           placeholder="Url (e.g http://192.168.0.100:8080/bigbluebutton/api)"/>
                 </div>
                 <div class="field">
-                    <label for="input-id"><code>Salt</code>
+                    <label label-default="label-default" for="input-id"><code>Salt</code>
                     </label>
-                    <input id="input-custom-server-salt" type="text" value="873b4c35e992f3e54c374412082934b6"
-                           placeholder="Salt">
+                    <input id="input-custom-server-salt" type="text" class="form-control"
+                           value="873b4c35e992f3e54c374412082934b6" placeholder="Salt"/>
                 </div>
-
                 <div class="field">
-                    <label for="input-id"><code>Mobile Salt</code>
+                    <label label-default="label-default" for="input-id"><code>Mobile Salt</code>
                     </label>
-                    <input id="input-custom-server-mobile-salt" type="text" value="03b07" placeholder="Mobile salt">
+                    <input id="input-custom-server-mobile-salt" type="text" class="form-control"
+                           value="03b07" placeholder="Mobile salt"/>
                 </div>
-
             </div>
             <div id="config-fields">
                 <h4>Parameters</h4>
 
                 <div class="field">
-                    <label for="input-id"><code>meetingID</code> and <code>recordID</code>
+                    <label label-default="label-default" for="input-id"><code>meetingID</code> and <code>recordID</code>
                     </label>
-                    <input id="input-id" type="text">
+                    <input id="input-id" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-name"><code>name</code></label>
-                    <input id="input-name" type="text">
+                    <label label-default="label-default" for="input-name"><code>name</code>
+                    </label>
+                    <input id="input-name" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-attendee-password"><code>attendeePW</code></label>
-                    <input id="input-attendee-password" type="text" value="ap">
+                    <label label-default="label-default" for="input-attendee-password"><code>attendeePW</code>
+                    </label>
+                    <input id="input-attendee-password" type="text" class="form-control" value="ap"
+                            />
                 </div>
                 <div class="field">
-                    <label for="input-moderator-password"><code>moderatorPW</code></label>
-                    <input id="input-moderator-password" type="text" value="mp">
+                    <label label-default="label-default" for="input-moderator-password"><code>moderatorPW</code>
+                    </label>
+                    <input id="input-moderator-password" type="text" class="form-control"
+                           value="mp"/>
                 </div>
                 <div class="field">
-                    <label for="input-fullname"><code>fullName</code></label>
-                    <input id="input-fullname" type="text">
+                    <label label-default="label-default" for="input-fullname"><code>fullName</code>
+                    </label>
+                    <input id="input-fullname" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-welcome"><code>welcome</code></label>
-                    <textarea id="input-welcome" rows="3"><br>Welcome to <b>%%CONFNAME%%</b>!</textarea>
+                    <label label-default="label-default" for="input-welcome"><code>welcome</code>
+                    </label>
+                    <textarea id="input-welcome" rows="3">
+                        <br/>Welcome to <b>%%CONFNAME%%</b>!</textarea>
                 </div>
                 <div class="field">
-                    <label for="input-record"><code>record</code></label>
-                    <input id="input-record" type="checkbox">
+                    <label label-default="label-default" for="input-record"><code>record</code>
+                    </label>
+                    <input id="input-record" type="checkbox"/>
                 </div>
                 <div class="field">
-                    <label for="input-voice-bridge"><code>voiceBridge</code></label>
-                    <input id="input-voice-bridge" type="text">
+                    <label label-default="label-default" for="input-voice-bridge"><code>voiceBridge</code>
+                    </label>
+                    <input id="input-voice-bridge" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-dial-number"><code>dialNumber</code></label>
-                    <input id="input-dial-number" type="text">
+                    <label label-default="label-default" for="input-dial-number"><code>dialNumber</code>
+                    </label>
+                    <input id="input-dial-number" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-web-voice"><code>webVoice</code></label>
-                    <input id="input-web-voice" type="text">
+                    <label label-default="label-default" for="input-web-voice"><code>webVoice</code>
+                    </label>
+                    <input id="input-web-voice" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-logout-url"><code>logoutURL</code></label>
-                    <input id="input-logout-url" type="text">
+                    <label label-default="label-default" for="input-logout-url"><code>logoutURL</code>
+                    </label>
+                    <input id="input-logout-url" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-max-participants"><code>maxParticipants</code></label>
-                    <input id="input-max-participants" type="text">
+                    <label label-default="label-default" for="input-max-participants"><code>maxParticipants</code>
+                    </label>
+                    <input id="input-max-participants" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-duration"><code>duration</code></label>
-                    <input id="input-duration" type="text">
+                    <label label-default="label-default" for="input-duration"><code>duration</code>
+                    </label>
+                    <input id="input-duration" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-user-id"><code>userID</code></label>
-                    <input id="input-user-id" type="text">
+                    <label label-default="label-default" for="input-user-id"><code>userID</code>
+                    </label>
+                    <input id="input-user-id" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-create-time"><code>createTime</code></label>
-                    <input id="input-create-time" type="text">
+                    <label label-default="label-default" for="input-create-time"><code>createTime</code>
+                    </label>
+                    <input id="input-create-time" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-web-voice-conf"><code>webVoiceConf</code></label>
-                    <input id="input-web-voice-conf" type="text">
+                    <label label-default="label-default" for="input-web-voice-conf"><code>webVoiceConf</code>
+                    </label>
+                    <input id="input-web-voice-conf" type="text" class="form-control"/>
                 </div>
                 <div class="field">
-                    <label for="input-publish"><code>publish</code></label>
-                    <input id="input-publish" type="checkbox">
+                    <label label-default="label-default" for="input-publish"><code>publish</code>
+                    </label>
+                    <input id="input-publish" type="checkbox"/>
                 </div>
                 <div class="field">
-                    <label for="input-meta"><code>meta_*</code></label>
+                    <label label-default="label-default" for="input-meta"><code>meta_*</code>
+                    </label>
 
                     <div class="tip">attribute=value (one per line, without spaces)</div>
-                    <textarea id="input-meta" rows="3" placeholder="myAttribute=1"></textarea>
+                    <textarea id="input-meta"
+                              class="form-control" rows="3" placeholder="myAttribute=1"></textarea>
                 </div>
                 <div class="field">
-                    <label for="input-custom">Custom parameters:</label>
+                    <label label-default="label-default" for="input-custom">Custom parameters:</label>
 
                     <div class="tip">attribute=value (one per line, without spaces)</div>
-                    <textarea id="input-custom" rows="3" placeholder="myCustomAttribute=Testing"></textarea>
+                    <textarea id="input-custom"
+                              class="form-control" rows="3" placeholder="myCustomAttribute=Testing"></textarea>
                 </div>
                 <div class="field">
                     <div class="tip">One call name per line</div>
-                    <label for="input-custom">Custom API calls:</label>
-                    <textarea id="input-custom-calls" rows="3" placeholder="customApiCall"></textarea>
+                    <label label-default="label-default" for="input-custom">Custom API calls:</label>
+                    <textarea id="input-custom-calls" class="form-control"
+                              rows="3" placeholder="customApiCall"></textarea>
                 </div>
                 <div id="resultxx"></div>
-                <div> <form id="searchForm"  role="form">
-                    <input id="configXML" type="text" name="configXML" placeholder="xml">
-                    <input type="submit" value="Send">
-                </form>
+                <div>
+                    <form id="searchForm" role="form">
+                        <input id="configXML" type="text" class="form-control" name="configXML"
+                               placeholder="xml"/>
+                        <input type="submit" value="Send" id="createconfig" class="btn btn-default"/>
+                    </form>
+                    <button class="btn btn-primary" id="moomoo" data-toggle="modal" data-target="#myModal">
+                        Show default config
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="span8">
+        <div class="col-md-8">
             <div id="api-mate-results"></div>
         </div>
     </div>
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Configure XML</h4>
+            </div>
+            <div class="modal-body" id="dialogBody">
+                Loading Remote XML;
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Submit new config</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="vendor/jquery.min.js"></script>
-<script type="text/javascript" src="vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="vendor/underscore-min.js"></script>
 <script type="text/javascript" src="vendor/mustache.js"></script>
 <script type="text/javascript" src="vendor/sha256.js"></script>
@@ -181,58 +218,151 @@
 <script type="text/javascript" src="vendor/jquery.xml2json.js"></script>
 <script type="text/javascript" src="api_mate.js"></script>
 <script>
-    $( "#searchForm").off()
-    $( "#searchForm" ).submit(function( event ) {
+    var defaultConfigXML, defaultConfigJSON;
+    $("#moomoo").click(function(){
+        getDefaultConfigXML();
+        return;
+    });
 
+    $("#createconfig").click(function (event) {
         event.preventDefault();
 
         var server = {};
+        var params = {};
+        var api = new BigBlueButtonApi(server.url, server.salt, server.salt);
+
         server.url = $("#input-custom-server-url").val();
         server.salt = $("#input-custom-server-salt").val();
 
-        var api = new BigBlueButtonApi(server.url, server.salt, server.salt);
-
-        var params = {};
         params.configXML = $("#configXML").val();
         params.meetingID = $("#input-id").val();
 
-
-
-        var checksum, key, param, paramList, query, url;
+        var key, param, paramList, query, url;
         paramList = [];
 
         for (key in params) {
             param = params[key];
             if ((key != null) && (param != null)) {
-                var ekey = encodeURIComponent(key);
-
-                paramList.push("" + encodeURIComponent(key).replace(/%20/g, "+").replace(/[!'()]/g, escape).replace(/\*/g, "%2A") + "=" + encodeURIComponent(param).replace(/%20/g, "+").replace(/[!'()]/g, escape).replace(/\*/g, "%2A"));
+                paramList.push("" + encodeString(key) + "=" + encodeString(param));
             }
         }
         if (paramList.length > 0) {
             query = paramList.join("&");
         }
 
-        var test = CryptoJS.SHA256("setConfigXML" + query + server.salt)+"";
-
         params.checksum = "" + api.checksum("setConfigXML", query);
 
         var url = api.urlFor("setConfigXML", null, false);
         $.ajax({
             url: server.url + "/setConfigXML.xml",
-            type:"POST",
+            type: "POST",
             data: params,
             dataType: "xml",
-            success: function(data){
+            success: function (data) {
                 var test = $.xml2json(data);
-                var html = Mustache.to_html("Code:{{returncode}} {{#configToken}}configToken={{configToken}}{{/configToken}}{{^configToken}}Failure:{{messageKey}}<br /> {{message}}{{/configToken}}", test);
-                $( "#resultxx" ).empty().append( html );
+                var html;
+                if(test.returncode == 'FAILED')
+                {
+                    html = Mustache.to_html('<div class="alert alert-danger">Code:{{returncode}} {{#configToken}}configToken={{configToken}}{{/configToken}}{{^configToken}}Failure:{{messageKey}}<br /> {{message}}{{/configToken}}</div>', test);
+
+                }
+                else{
+                    html = Mustache.to_html('<div class="alert alert-success">Code:{{returncode}} {{#configToken}}configToken={{configToken}}{{/configToken}}{{^configToken}}Failure:{{messageKey}}<br /> {{message}}{{/configToken}}</div>', test);
+
+                    bob("configToken", test.configToken);
+                }
+
+                $("#resultxx").empty().append(html);
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+
             }
         })
 
     });
 
+    function getDefaultConfigXML(){
+        var defaultConfigXML, defaultConfigJSON;
+
+        var template = '{{#module}}<div class="checkbox"><label><input type="checkbox" value="1">{{name}}</label></div>{{/module}}';
+        $("#dialogBody").empty().append("Loading remote XML");
+
+        var server = {};
+
+        server.url = $("#input-custom-server-url").val();
+        server.salt = $("#input-custom-server-salt").val();
+
+        var api = new BigBlueButtonApi(server.url, server.salt, server.salt);
+        var url = api.urlFor("getDefaultConfigXML", null, false);
+
+        $.get( url, function(data) {
+            defaultConfigXML = data;
+
+            defaultConfigJSON = $.xml2json(data);
+            console.log(defaultConfigJSON);
+
+            var html = '<div class="form-group"><label>Timeout</label><input type="text" class="form-control" placeholder="Timeout" value="'+ test.logoutTimer.normalWait +'"></div>';
+
+            html += Mustache.to_html(template, test.modules);
+            $("#dialogBody").empty().append(html);
+        });
+
+    }
+
+    function isFilled(field) {
+        var value;
+        value = $(field).val();
+        return (value != null) && value.trim() !== "";
+    }
+
+    function bob(key, value){
+        var lines, line, _j, _len1, separator, paramName, paramValue, returnValue;
+        if (isFilled("#input-meta")) {
+            lines = $("#input-meta").val().replace(/\r\n/g, "\n").split("\n");
+            for (_j = 0, _len1 = lines.length; _j < _len1; _j++) {
+                line = lines[_j];
+                separator = line.indexOf("=");
+                if (separator >= 0) {
+                    paramName = line.substring(0, separator);
+                    paramValue = line.substring(separator + 1, line.length);
+                    if(paramName == key) {
+                        paramValue = value;
+                    }
+                    lines[_j] = paramName + "=" + paramValue;
+                }
+            }
+            returnValue = lines.join("\n");
+        }
+        else{
+            returnValue = key + "=" + value + "\n";
+        }
+
+        $("#input-custom-calls").val(returnValue);
+    }
+
+    function encodeString(value){
+        return encodeURIComponent(value)
+                .replace(/%20/g, "+")
+                .replace(/[!'()]/g, escape)
+                .replace(/\*/g, "%2A");
+    }
+
+    function xmlToString(xmlData) {
+
+        var xmlString;
+        //IE
+        if (window.ActiveXObject){
+            xmlString = xmlData.xml;
+        }
+        // code for Mozilla, Firefox, Opera, etc.
+        else{
+            xmlString = (new XMLSerializer()).serializeToString(xmlData);
+        }
+        return xmlString;
+    }
 
 </script>
+
+
 </body>
 </html>

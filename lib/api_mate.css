@@ -5,6 +5,10 @@
 #page-header {
   padding: 10px 20px; }
 
+.field{
+    margin-bottom:10px;
+}
+
 @media (max-width: 768px) {
   body, #page-header-wrapper, #content-wrapper {
     padding-left: 0;

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="vendor/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap-responsive.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="api_mate.css" media="all" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<form action="/bigbluebutton/api/setConfigXML" id="searchForm"  role="form">
+    <input type="text" name="s" placeholder="Search...">
+    <input type="submit" value="Search">
+</form>
+<!-- the result of the search will be rendered inside this div -->
+<div id="result"></div>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="vendor/bootstrap.min.js"></script>
+<script type="text/javascript" src="vendor/underscore-min.js"></script>
+<script type="text/javascript" src="vendor/mustache.js"></script>
+<script type="text/javascript" src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+<script>
+    // Attach a submit handler to the form
+    $( "#searchForm" ).submit(function( event ) {
+
+        // Stop form from submitting normally
+        event.preventDefault();
+
+        // Get some values from elements on the page:
+        var $form = $( this ),
+                term = $form.find( "input[name='s']" ).val(),
+                url = $form.attr( "action" );
+        var server = {};
+        server.url = $("#input-custom-server-url").val();
+        server.salt = $("#input-custom-server-salt").val();
+        var api = new BigBlueButtonApi(server.url, server.salt, server.salt);
+
+        params = {};
+
+        var url = api.urlFor("setConfigXML", params);
+
+        // Send the data using post
+        var posting = $.post( url, { s: term } );
+
+        // Put the results in a div
+        posting.done(function( data ) {
+            var content = $( data ).find( "#content" );
+            $( "#result" ).empty().append( content.html() );
+        });
+    });
+</script>
+</body>
+</html>
